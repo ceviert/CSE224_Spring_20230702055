@@ -1,0 +1,1 @@
+lvs {/openlane/designs/complement/runs/RUN_2025.04.20_17.45.46/results/signoff/complement.spice complement} {/openlane/designs/complement/runs/RUN_2025.04.20_17.45.46/tmp/signoff/34-complement.pnl.v complement} /root/.volare/sky130A/libs.tech/netgen/sky130A_setup.tcl /openlane/designs/complement/runs/RUN_2025.04.20_17.45.46/logs/signoff/37-complement.lef.lvs.log -json

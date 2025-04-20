@@ -1,0 +1,25 @@
+digraph "dff_behavioral" {
+label="dff_behavioral";
+rankdir="LR";
+remincross=true;
+n5 [ shape=octagon, label="qbar", color="black", fontcolor="black" ];
+n6 [ shape=octagon, label="q", color="black", fontcolor="black" ];
+n7 [ shape=octagon, label="clear", color="black", fontcolor="black" ];
+n8 [ shape=octagon, label="clk", color="black", fontcolor="black" ];
+n9 [ shape=octagon, label="d", color="black", fontcolor="black" ];
+c12 [ shape=record, label="{{<p10> A}|$3\n$logic_not|{<p11> Y}}",  ];
+v0 [ label="1" ];
+c14 [ shape=record, label="{{<p10> A|<p13> B}|$2\n$eq|{<p11> Y}}",  ];
+p1 [shape=box, style=rounded, label="PROC $1\n/openlane/designs/dff_behavioral/src/dff_behavioral.v:4.1-14.5", ];
+c12:p11:e -> p1:w [color="black", fontcolor="black", label=""];
+c14:p11:e -> p1:w [color="black", fontcolor="black", label=""];
+p1:e -> n5:w [color="black", fontcolor="black", label=""];
+n5:e -> p1:w [color="black", fontcolor="black", label=""];
+p1:e -> n6:w [color="black", fontcolor="black", label=""];
+n6:e -> p1:w [color="black", fontcolor="black", label=""];
+n7:e -> c14:p10:w [color="black", fontcolor="black", label=""];
+n8:e -> p1:w [color="black", fontcolor="black", label=""];
+n9:e -> c12:p10:w [color="black", fontcolor="black", label=""];
+n9:e -> p1:w [color="black", fontcolor="black", label=""];
+v0:e -> c14:p13:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+}

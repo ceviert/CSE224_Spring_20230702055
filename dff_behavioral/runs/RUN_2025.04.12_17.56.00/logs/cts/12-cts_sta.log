@@ -1,0 +1,181 @@
+OpenROAD b16bda7e82721d10566ff7e2b68f1ff0be9f9e38 
+Features included (+) or not (-): +Charts +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+define_corners Typical
+read_liberty -corner Typical /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Using 1e-12 for capacitance...
+Using 1e+03 for resistance...
+Using 1e-09 for time...
+Using 1e+00 for voltage...
+Using 1e-03 for current...
+Using 1e-09 for power...
+Using 1e-06 for distance...
+[INFO]: Reading ODB at '/openlane/designs/dff_behavioral/runs/RUN_2025.04.12_17.56.00/results/cts/dff_behavioral.odb'…
+Reading design constraints file at '/openlane/designs/dff_behavioral/src/dff_behavioral.sdc'…
+[INFO]: No (un)set_propagated_clock found in /openlane/designs/dff_behavioral/src/dff_behavioral.sdc
+[INFO]: Propagating all clocks
+[INFO]: Setting RC values...
+min_report
+
+===========================================================================
+report_checks -path_delay min (Hold)
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+worst slack corner Typical: INF
+min_report_end
+max_report
+
+===========================================================================
+report_checks -path_delay max (Setup)
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+worst slack corner Typical: INF
+max_report_end
+checks_report
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+Startpoint: _8_ (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: qbar (output port)
+Path Group: unconstrained
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+     1    0.01    0.00    0.00    0.00 ^ clk (in)
+                                         clk (net)
+                  0.00    0.00    0.00 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     2    0.02    0.04    0.11    0.11 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                         clknet_0_clk (net)
+                  0.04    0.00    0.11 ^ clkbuf_1_0__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     1    0.00    0.03    0.11    0.21 ^ clkbuf_1_0__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                         clknet_1_0__leaf_clk (net)
+                  0.03    0.00    0.21 ^ _8_/CLK (sky130_fd_sc_hd__dfxtp_1)
+     1    0.01    0.06    0.31    0.52 ^ _8_/Q (sky130_fd_sc_hd__dfxtp_1)
+                                         net4 (net)
+                  0.06    0.00    0.52 ^ output4/A (sky130_fd_sc_hd__buf_1)
+     1    0.00    0.02    0.07    0.59 ^ output4/X (sky130_fd_sc_hd__buf_1)
+                                         qbar (net)
+                  0.02    0.00    0.59 ^ qbar (out)
+                                  0.59   data arrival time
+-----------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+
+max slew violations count Typical: 0
+max fanout violations count Typical: 0
+max cap violations count Typical: 0
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 2 input ports missing set_input_delay.
+  clear
+  d
+Warning: There are 4 unconstrained endpoints.
+  q
+  qbar
+  _8_/D
+  _9_/D
+checks_report_end
+power_report
+
+===========================================================================
+ report_power
+============================================================================
+======================= Typical Corner ===================================
+
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             8.48e-06   1.36e-07   1.67e-11   8.62e-06  13.0%
+Combinational          1.56e-07   1.72e-08   1.60e-11   1.73e-07   0.3%
+Clock                  5.07e-05   7.02e-06   1.21e-10   5.77e-05  86.8%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  5.93e-05   7.17e-06   1.54e-10   6.65e-05 100.0%
+                          89.2%      10.8%       0.0%
+
+power_report_end
+skew_report
+
+===========================================================================
+report_clock_skew
+============================================================================
+Clock core_clock
+No launch/capture paths found.
+
+skew_report_end
+summary_report
+
+===========================================================================
+report_tns
+============================================================================
+tns 0.00
+
+===========================================================================
+report_wns
+============================================================================
+wns 0.00
+
+===========================================================================
+report_worst_slack -max (Setup)
+============================================================================
+worst slack INF
+
+===========================================================================
+report_worst_slack -min (Hold)
+============================================================================
+worst slack INF
+summary_report_end
+area_report
+
+===========================================================================
+report_design_area
+============================================================================
+Design area 161 u^2 19% utilization.
+area_report_end
+check_nonpropagated_clocks
+check_nonpropagated_clocks_end
+[WARNING] Did not save OpenROAD database!
+Writing SDF to '/openlane/designs/dff_behavioral/runs/RUN_2025.04.12_17.56.00/results/signoff/dff_behavioral.sdf'…
+Writing timing model to '/openlane/designs/dff_behavioral/runs/RUN_2025.04.12_17.56.00/results/signoff/dff_behavioral.lib'…

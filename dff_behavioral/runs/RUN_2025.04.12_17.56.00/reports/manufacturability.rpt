@@ -1,0 +1,19 @@
+Design Name: dff_behavioral
+Run Directory: /openlane/designs/dff_behavioral/runs/RUN_2025.04.12_17.56.00
+----------------------------------------
+
+Magic DRC Summary:
+Source: /openlane/designs/dff_behavioral/runs/RUN_2025.04.12_17.56.00/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /openlane/designs/dff_behavioral/runs/RUN_2025.04.12_17.56.00/logs/signoff/37-dff_behavioral.lef.lvs.log
+Number of nets: 18                         |Number of nets: 18                         
+Design is LVS clean.
+----------------------------------------
+
+Antenna Summary:
+Source: /openlane/designs/dff_behavioral/runs/RUN_2025.04.12_17.56.00/logs/signoff/40-arc.log
+Pin violations: 0
+Net violations: 0

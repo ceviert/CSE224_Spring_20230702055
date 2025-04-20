@@ -1,0 +1,159 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Fastest Corner ===================================
+
+Startpoint: _8_ (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: qbar (output port)
+Path Group: unconstrained
+Path Type: max
+Corner: Fastest
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+     1    0.01    0.00    0.00    0.00 ^ clk (in)
+                                         clk (net)
+                  0.00    0.00    0.00 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     2    0.02    0.03    0.07    0.07 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                         clknet_0_clk (net)
+                  0.03    0.00    0.08 ^ clkbuf_1_0__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     1    0.00    0.02    0.07    0.15 ^ clkbuf_1_0__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                         clknet_1_0__leaf_clk (net)
+                  0.02    0.00    0.15 ^ _8_/CLK (sky130_fd_sc_hd__dfxtp_1)
+     1    0.01    0.07    0.21    0.36 ^ _8_/Q (sky130_fd_sc_hd__dfxtp_1)
+                                         net4 (net)
+                  0.07    0.00    0.36 ^ output4/A (sky130_fd_sc_hd__buf_1)
+     1    0.00    0.02    0.04    0.40 ^ output4/X (sky130_fd_sc_hd__buf_1)
+                                         qbar (net)
+                  0.02    0.00    0.40 ^ qbar (out)
+                                  0.40   data arrival time
+-----------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+======================= Slowest Corner ===================================
+
+Startpoint: _8_ (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: qbar (output port)
+Path Group: unconstrained
+Path Type: max
+Corner: Slowest
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+     1    0.01    0.00    0.00    0.00 ^ clk (in)
+                                         clk (net)
+                  0.00    0.00    0.00 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     2    0.02    0.06    0.19    0.19 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                         clknet_0_clk (net)
+                  0.06    0.00    0.19 ^ clkbuf_1_0__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     1    0.00    0.05    0.19    0.38 ^ clkbuf_1_0__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                         clknet_1_0__leaf_clk (net)
+                  0.05    0.00    0.38 ^ _8_/CLK (sky130_fd_sc_hd__dfxtp_1)
+     1    0.01    0.14    0.67    1.05 ^ _8_/Q (sky130_fd_sc_hd__dfxtp_1)
+                                         net4 (net)
+                  0.14    0.00    1.05 ^ output4/A (sky130_fd_sc_hd__buf_1)
+     1    0.00    0.04    0.15    1.20 ^ output4/X (sky130_fd_sc_hd__buf_1)
+                                         qbar (net)
+                  0.04    0.00    1.20 ^ qbar (out)
+                                  1.20   data arrival time
+-----------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+======================= Typical Corner ===================================
+
+Startpoint: _8_ (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: qbar (output port)
+Path Group: unconstrained
+Path Type: max
+Corner: Typical
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+     1    0.01    0.00    0.00    0.00 ^ clk (in)
+                                         clk (net)
+                  0.00    0.00    0.00 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     2    0.02    0.04    0.11    0.11 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                         clknet_0_clk (net)
+                  0.04    0.00    0.11 ^ clkbuf_1_0__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     1    0.00    0.03    0.11    0.22 ^ clkbuf_1_0__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                         clknet_1_0__leaf_clk (net)
+                  0.03    0.00    0.22 ^ _8_/CLK (sky130_fd_sc_hd__dfxtp_1)
+     1    0.01    0.09    0.33    0.54 ^ _8_/Q (sky130_fd_sc_hd__dfxtp_1)
+                                         net4 (net)
+                  0.09    0.00    0.55 ^ output4/A (sky130_fd_sc_hd__buf_1)
+     1    0.00    0.02    0.07    0.62 ^ output4/X (sky130_fd_sc_hd__buf_1)
+                                         qbar (net)
+                  0.02    0.00    0.62 ^ qbar (out)
+                                  0.62   data arrival time
+-----------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Fastest Corner ===================================
+
+No paths found.
+
+======================= Slowest Corner ===================================
+
+No paths found.
+
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Fastest Corner ===================================
+
+
+max slew violations count Fastest: 0
+max fanout violations count Fastest: 0
+max cap violations count Fastest: 0
+======================= Slowest Corner ===================================
+
+
+max slew violations count Slowest: 0
+max fanout violations count Slowest: 0
+max cap violations count Slowest: 0
+======================= Typical Corner ===================================
+
+
+max slew violations count Typical: 0
+max fanout violations count Typical: 0
+max cap violations count Typical: 0
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 2 input ports missing set_input_delay.
+  clear
+  d
+Warning: There are 4 unconstrained endpoints.
+  q
+  qbar
+  _8_/D
+  _9_/D

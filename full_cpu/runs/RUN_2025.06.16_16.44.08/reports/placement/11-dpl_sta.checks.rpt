@@ -1,0 +1,310 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+Startpoint: _5745_ (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: _5761_ (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ _5745_/CLK (sky130_fd_sc_hd__dfxtp_1)
+     5    0.01    0.13    0.35    0.35 ^ _5745_/Q (sky130_fd_sc_hd__dfxtp_1)
+                                         clk_div.counter[0] (net)
+                  0.13    0.00    0.35 ^ _4700_/B (sky130_fd_sc_hd__and3_1)
+     4    0.02    0.16    0.25    0.60 ^ _4700_/X (sky130_fd_sc_hd__and3_1)
+                                         _2304_ (net)
+                  0.16    0.00    0.60 ^ _4706_/C (sky130_fd_sc_hd__and3_1)
+     4    0.01    0.14    0.24    0.84 ^ _4706_/X (sky130_fd_sc_hd__and3_1)
+                                         _2308_ (net)
+                  0.14    0.00    0.84 ^ _4711_/B (sky130_fd_sc_hd__and2_1)
+     4    0.01    0.12    0.20    1.04 ^ _4711_/X (sky130_fd_sc_hd__and2_1)
+                                         _2312_ (net)
+                  0.12    0.00    1.04 ^ _4717_/C (sky130_fd_sc_hd__and3_1)
+     4    0.02    0.16    0.25    1.29 ^ _4717_/X (sky130_fd_sc_hd__and3_1)
+                                         _2316_ (net)
+                  0.16    0.00    1.29 ^ _4722_/C (sky130_fd_sc_hd__and3_1)
+     4    0.01    0.14    0.25    1.54 ^ _4722_/X (sky130_fd_sc_hd__and3_1)
+                                         _2319_ (net)
+                  0.14    0.00    1.54 ^ _4726_/C (sky130_fd_sc_hd__and3_1)
+     5    0.01    0.15    0.25    1.79 ^ _4726_/X (sky130_fd_sc_hd__and3_1)
+                                         _2321_ (net)
+                  0.15    0.00    1.79 ^ _4732_/C (sky130_fd_sc_hd__and3_1)
+     4    0.01    0.15    0.26    2.05 ^ _4732_/X (sky130_fd_sc_hd__and3_1)
+                                         _2325_ (net)
+                  0.15    0.00    2.05 ^ _4737_/C (sky130_fd_sc_hd__and3_1)
+     3    0.01    0.09    0.21    2.26 ^ _4737_/X (sky130_fd_sc_hd__and3_1)
+                                         _2328_ (net)
+                  0.09    0.00    2.26 ^ _4740_/B (sky130_fd_sc_hd__nand2_1)
+     2    0.01    0.06    0.09    2.34 v _4740_/Y (sky130_fd_sc_hd__nand2_1)
+                                         _2330_ (net)
+                  0.06    0.00    2.34 v _4742_/A (sky130_fd_sc_hd__and2_1)
+     1    0.00    0.04    0.14    2.49 v _4742_/X (sky130_fd_sc_hd__and2_1)
+                                         _2332_ (net)
+                  0.04    0.00    2.49 v _4743_/A (sky130_fd_sc_hd__clkbuf_1)
+     1    0.00    0.03    0.09    2.57 v _4743_/X (sky130_fd_sc_hd__clkbuf_1)
+                                         _0045_ (net)
+                  0.03    0.00    2.57 v _5761_/D (sky130_fd_sc_hd__dfxtp_1)
+                                  2.57   data arrival time
+
+                  0.00   10.00   10.00   clock core_clock (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                          0.00   10.00   clock reconvergence pessimism
+                                 10.00 ^ _5761_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                         -0.11    9.89   library setup time
+                                  9.89   data required time
+-----------------------------------------------------------------------------
+                                  9.89   data required time
+                                 -2.57   data arrival time
+-----------------------------------------------------------------------------
+                                  7.31   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+
+max slew violations count Typical: 0
+max fanout violations count Typical: 0
+max cap violations count Typical: 0
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 2 unannotated drivers.
+ clk
+ Main_18/LO
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 2 input ports missing set_input_delay.
+  next
+  rst
+Warning: There are 90 unclocked register/latch pins.
+  _5740_/CLK
+  _5741_/CLK
+  _5742_/CLK
+  _5743_/CLK
+  _5744_/CLK
+  _5764_/CLK
+  _5765_/CLK
+  _5766_/CLK
+  _5767_/CLK
+  _5768_/CLK
+  _5769_/CLK
+  _5770_/CLK
+  _5771_/CLK
+  _5772_/CLK
+  _5773_/CLK
+  _5774_/CLK
+  _5775_/CLK
+  _5776_/CLK
+  _5777_/CLK
+  _5778_/CLK
+  _5779_/CLK
+  _5780_/CLK
+  _5781_/CLK
+  _5782_/CLK
+  _5783_/CLK
+  _5784_/CLK
+  _5785_/CLK
+  _5786_/CLK
+  _5787_/CLK
+  _5788_/CLK
+  _5789_/CLK
+  _5790_/CLK
+  _5791_/CLK
+  _5792_/CLK
+  _5793_/GATE_N
+  _5794_/GATE_N
+  _5795_/GATE_N
+  _5796_/GATE_N
+  _5797_/GATE_N
+  _5798_/GATE_N
+  _5799_/GATE_N
+  _5800_/GATE_N
+  _5801_/GATE_N
+  _5802_/GATE_N
+  _5803_/GATE_N
+  _5804_/GATE_N
+  _5805_/GATE_N
+  _5806_/GATE_N
+  _5807_/GATE_N
+  _5808_/GATE_N
+  _5809_/GATE_N
+  _5810_/GATE_N
+  _5811_/GATE_N
+  _5812_/GATE_N
+  _5813_/GATE_N
+  _5814_/GATE_N
+  _5815_/GATE_N
+  _5816_/GATE_N
+  _5817_/GATE_N
+  _5818_/GATE_N
+  _5819_/GATE_N
+  _5820_/GATE_N
+  _5821_/GATE_N
+  _5822_/GATE_N
+  _5823_/GATE_N
+  _5824_/GATE_N
+  _5825_/GATE_N
+  _5858_/CLK
+  _5859_/CLK
+  _5860_/CLK
+  _5861_/CLK
+  _5862_/CLK
+  _5863_/CLK
+  _5864_/CLK
+  _5866_/CLK
+  _5867_/CLK
+  _5868_/CLK
+  _5869_/CLK
+  _5870_/CLK
+  _5871_/CLK
+  _5872_/CLK
+  _5873_/CLK
+  _6259_/CLK
+  _6260_/CLK
+  _6261_/CLK
+  _6262_/CLK
+  _6263_/CLK
+  _6264_/CLK
+  _6265_/CLK
+  _6266_/CLK
+Warning: There are 111 unconstrained endpoints.
+  an[0]
+  an[1]
+  an[2]
+  an[3]
+  an[4]
+  an[5]
+  an[6]
+  an[7]
+  cx[0]
+  cx[1]
+  cx[2]
+  cx[3]
+  cx[4]
+  cx[5]
+  cx[6]
+  cx[7]
+  _5740_/D
+  _5741_/D
+  _5742_/D
+  _5743_/D
+  _5744_/D
+  _5763_/D
+  _5764_/D
+  _5765_/D
+  _5766_/D
+  _5767_/D
+  _5768_/D
+  _5769_/D
+  _5770_/D
+  _5771_/D
+  _5772_/D
+  _5773_/D
+  _5774_/D
+  _5775_/D
+  _5776_/D
+  _5777_/D
+  _5778_/D
+  _5779_/D
+  _5780_/D
+  _5781_/D
+  _5782_/D
+  _5783_/D
+  _5784_/D
+  _5785_/D
+  _5786_/D
+  _5787_/D
+  _5788_/D
+  _5789_/D
+  _5790_/D
+  _5791_/D
+  _5792_/D
+  _5793_/D
+  _5794_/D
+  _5795_/D
+  _5796_/D
+  _5797_/D
+  _5798_/D
+  _5799_/D
+  _5800_/D
+  _5801_/D
+  _5802_/D
+  _5803_/D
+  _5804_/D
+  _5805_/D
+  _5806_/D
+  _5807_/D
+  _5808_/D
+  _5809_/D
+  _5810_/D
+  _5811_/D
+  _5812_/D
+  _5813_/D
+  _5814_/D
+  _5815_/D
+  _5816_/D
+  _5817_/D
+  _5818_/D
+  _5819_/D
+  _5820_/D
+  _5821_/D
+  _5822_/D
+  _5823_/D
+  _5824_/D
+  _5825_/D
+  _5858_/D
+  _5859_/D
+  _5860_/D
+  _5861_/D
+  _5862_/D
+  _5863_/D
+  _5864_/D
+  _5866_/D
+  _5867_/D
+  _5868_/D
+  _5869_/D
+  _5870_/D
+  _5871_/D
+  _5872_/D
+  _5873_/D
+  _6258_/D
+  _6259_/D
+  _6260_/D
+  _6261_/D
+  _6262_/D
+  _6263_/D
+  _6264_/D
+  _6265_/D
+  _6266_/D
+  _6267_/D
+  _6268_/D
+  _6269_/D
